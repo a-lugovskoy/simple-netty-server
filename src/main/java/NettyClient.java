@@ -27,12 +27,7 @@ public class NettyClient {
         ClientBootstrap bootstrap = new ClientBootstrap(channelFactory);
 
         //Set new ChannelPipelines
-        bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
-
-            public ChannelPipeline getPipeline() throws Exception {
-                return Channels.pipeline(new NettyClientHandler());
-            }
-        });
+        bootstrap.setPipelineFactory(() -> Channels.pipeline(new NettyClientHandler()));
 
         //The result of an asynchronous Channel I/O operation.
         //connect to localhost:11111

@@ -18,6 +18,7 @@ public class NettyServerHandler extends SimpleChannelHandler {
                 e.getRemoteAddress());
     }
 
+    //handler for response client
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
         String s = NettyClientHandler.getStringFromBuffer(((ChannelBuffer)e.getMessage()));
@@ -25,6 +26,7 @@ public class NettyServerHandler extends SimpleChannelHandler {
         System.out.println("Server got message : " + s);
     }
 
+    //exception handler for exceptions in network
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {
         System.out.println("Exception" + e.getCause());

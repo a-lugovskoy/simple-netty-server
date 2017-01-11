@@ -22,15 +22,13 @@ public class NettyServer {
                 new OrderedMemoryAwareThreadPoolExecutor(1, 400000000,
                         2000000000, 60, TimeUnit.SECONDS));
 
+        //Standard class in netty for simple open connect.
         ServerBootstrap bootstrap = new ServerBootstrap(channelFactory);
 
-        bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
+        //Set new ChannelPipelines
+        bootstrap.setPipelineFactory(() -> Channels.pipeline(new NettyServerHandler()));
 
-            public ChannelPipeline getPipeline() throws Exception {
-                return Channels.pipeline(new NettyServerHandler());
-            }
-        });
-
+        //Bind channel on localhost:11111
         bootstrap.bind(new InetSocketAddress(11111));
 
     }

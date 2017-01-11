@@ -29,7 +29,7 @@ public class NettyClientHandler extends SimpleChannelHandler {
         System.out.println(" ---- MessageReceived -- message: " + getStringFromBuffer((ChannelBuffer) e.getMessage()));
     }
 
-    //exceptions
+    //exception handler for exceptions in network
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {
         System.out.println(e.getCause());
