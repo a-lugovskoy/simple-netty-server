@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by A-Lugovskoy
+ * Server side
  */
 public class NettyServer {
 

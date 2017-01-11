@@ -4,6 +4,7 @@ import org.jboss.netty.channel.*;
 
 /**
  * Created by A-Lugovskoy
+ * Server handlers
  */
 public class NettyServerHandler extends SimpleChannelHandler {
 

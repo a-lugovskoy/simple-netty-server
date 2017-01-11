@@ -6,6 +6,7 @@ import java.io.UnsupportedEncodingException;
 
 /**
  * Created by A-Lugovskoy
+ * Client handlers
  */
 public class NettyClientHandler extends SimpleChannelHandler {
 
