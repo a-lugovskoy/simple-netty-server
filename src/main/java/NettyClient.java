@@ -36,7 +36,7 @@ public class NettyClient {
 
         //The result of an asynchronous Channel I/O operation.
         //connect to localhost:11111
-        ChannelFuture future = bootstrap.connect(new InetSocketAddress("192.168.10.153", 11111));
+        ChannelFuture future = bootstrap.connect(new InetSocketAddress( 11111));
 
         //.sync() - wait connect and getting channel if method .sync() won't throw exception(if connection will be open).
         Channel channel = future.sync().getChannel();

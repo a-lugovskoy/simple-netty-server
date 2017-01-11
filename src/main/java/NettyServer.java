@@ -31,7 +31,7 @@ public class NettyServer {
             }
         });
 
-        Channel channel = bootstrap.bind(new InetSocketAddress(11111));
+        bootstrap.bind(new InetSocketAddress(11111));
 
     }
 
